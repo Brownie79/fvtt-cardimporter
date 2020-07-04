@@ -6,9 +6,9 @@
   "version": "0.0.0",
   "minimumCoreVersion": "0.6.0",
   "compatibleCoreVersion": "0.6.4",
-  "url": "",
-  "manifest": "",
-  "download": "",
+  "url": "https://github.com/Brownie79/fvtt-cardimporter",
+  "manifest": "https://raw.githubusercontent.com/Brownie79/fvtt-cardimporter/master/module.json",
+  "download": "https://github.com/Brownie79/fvtt-cardimporter/archive/v1.0.0.zip",
   "esmodules": ["scripts/cardimporter.js", "scripts/js-yaml.js"],
   "styles": ["styles/cardimporter.css"],
   "languages": [
