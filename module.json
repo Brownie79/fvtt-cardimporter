@@ -1,0 +1,21 @@
+{
+  "name": "fvtt-cardimporter",
+  "title": "Card Deck Importer (SDF compatible) ",
+  "description": "Uses either Images (Filepicker) or SDF (Standard Deck Format) to create a set of Journal Entries, and then turns them into a rolltable",
+  "author": "spacemandev",
+  "version": "0.0.0",
+  "minimumCoreVersion": "0.6.0",
+  "compatibleCoreVersion": "0.6.4",
+  "url": "",
+  "manifest": "",
+  "download": "",
+  "esmodules": ["scripts/cardimporter.js", "scripts/js-yaml.js"],
+  "styles": ["styles/cardimporter.css"],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ]
+}

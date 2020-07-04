@@ -1,0 +1,7 @@
+{
+  "CardImport.Import": "Import",
+  "CardImport.Cancel": "Cancel",
+  "CardImport.SDFImport": "SDF Import",
+  "CardImport.DeckImportDialogTitle": "Import SDF or Images to Journal Entries",
+  "CardImport.RollTableImportDialogTitle": "Convert a Journal Folder into a Rollable Table"
+}
