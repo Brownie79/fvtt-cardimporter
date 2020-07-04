@@ -5,7 +5,7 @@ export const pack2table = async (packLabel, tableName) => {
     if (pack == null || pack.metadata.entity != "JournalEntry") {
       throw new Error("Invalid Compendium! (Must exist and be of type JournalEntry");
     }
-    let packContent = await game.packs.find((el) => el.metadata.name == packLabel).getContent();
+    let packContent = await game.packs.find((el) => el.metadata.label == packLabel).getContent();
     console.log("Pack Content: ");
     console.log(packContent);
     let tableEntries = [];
