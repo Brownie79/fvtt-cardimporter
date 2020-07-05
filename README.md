@@ -1,5 +1,7 @@
 # Card Importer
 
+[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/K3K11VCDK)
+
 ## Create Journal Entries & Compendiums
 Currently only supports card images. 
 1. Create a uploads/ folder in your Foundry data directory (or call it whatever else it doesn't matter)
