@@ -1,13 +1,15 @@
-export const pack2table = async (packLabel, tableName) => {
+export const pack2table = async (packName) => {
   try {
+    console.log(packName);
     //See if the journalFolder exists and is of type "journal entry"
-    let pack = game.packs.find((el) => el.metadata.label == packLabel);
+    let pack = game.packs.find((el) => el.metadata.label == packName);
+    console.log(pack);
     if (pack == null || pack.metadata.entity != "JournalEntry") {
       throw new Error("Invalid Compendium! (Must exist and be of type JournalEntry");
     }
-    let packContent = await game.packs.find((el) => el.metadata.label == packLabel).getContent();
-    console.log("Pack Content: ");
-    console.log(packContent);
+    let packContent = await pack.getContent();
+    //console.log("Pack Content: ");
+    //console.log(packContent);
     let tableEntries = [];
     for (let i = 0; i < packContent.length; i++) {
       tableEntries[i] = {
@@ -21,11 +23,11 @@ export const pack2table = async (packLabel, tableName) => {
 
     //if rolltable already exists add to it, else make a new one
     let rTable = await RollTable.create({
-      name: tableName,
+      name: packName,
       results: tableEntries,
       formula: `1d${tableEntries.length}`,
     });
-    console.log(rTable);
+    //console.log(rTable);
   } catch (e) {
     console.error(e.message);
     ui.notifications.error(e);

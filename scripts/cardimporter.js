@@ -48,10 +48,15 @@ Hooks.on("renderJournalDirectory", (app, html, data) => {
 Hooks.on("renderRollTableDirectory", (app, html, data) => {
   const rollTableImportButton = $(`<button class="importButton">Roll Table Import</button>`);
   html.find(".directory-footer").append(rollTableImportButton);
+
+  let journalPacks = game.packs.filter((el) => el.metadata.entity == "JournalEntry");
+  let optionList = "";
+  for (let i = 0; i < journalPacks.length; i++) {
+    optionList += `<option value=${journalPacks[i].metadata.label}>${journalPacks[i].metadata.label}</option>`;
+  }
+
   let rollTableDialog = `
-  <h3> Compendium Label: <input id="packName" type="text"></h3>
-  <h3> Roll Table Name: <input id="rollTableName" type="text"></h3>
-  `;
+  <h3> Compendium To Convert: <select id="packName">${optionList}</select></h3> `;
   rollTableImportButton.click((ev) => {
     new Dialog({
       title: game.i18n.localize("CardImport.RollTableImportDialogTitle"),
@@ -60,7 +65,7 @@ Hooks.on("renderRollTableDirectory", (app, html, data) => {
         Import: {
           label: game.i18n.localize("CardImport.Import"),
           callback: async (html) => {
-            await pack2table(html.find("#packName")[0].value, html.find("#rollTableName")[0].value);
+            await pack2table(html.find("#packName")[0].value);
           },
         },
         Cancel: {
